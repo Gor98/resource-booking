@@ -10,7 +10,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
  * Class Collection
  * @package App\Common\Tools
  */
-class Collection
+class CustomCollection
 {
     /**
      * @param $collection

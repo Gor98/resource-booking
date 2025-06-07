@@ -43,8 +43,8 @@ class APIResponse
         return response()->json([
             'message' => $message,
             'status' =>  'success',
-            'data' => $response->resource,
-            'pagination' => $response->pagination,
+            'data' => $response->all(),
+            'pagination' => CustomCollection::constructPaginate($response),
         ], $status);
     }
 

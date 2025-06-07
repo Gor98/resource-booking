@@ -41,7 +41,7 @@ class RegisterTest extends TestCase
     }
 
     /**
-     * @return array
+     * @return array[]
      */
     public static function badDataProvider(): array
     {

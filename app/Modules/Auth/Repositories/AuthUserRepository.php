@@ -19,7 +19,6 @@ class AuthUserRepository extends Repository
         'name',
         'email',
         'password',
-        'verified',
         'email_verified_at',
     ];
 

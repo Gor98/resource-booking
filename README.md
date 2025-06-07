@@ -43,6 +43,11 @@ php artisan migrate
 php artisan db:seed
 ```
 
+### 8. Run tests
+```sh
+php artisan test
+```
+
 ## API Testing
 A Postman collection is included in the repository for testing the API endpoints. Import the collection into Postman to test the available routes easily.
 

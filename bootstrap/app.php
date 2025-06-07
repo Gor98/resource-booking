@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\OptionalAuthenticate;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -16,10 +17,17 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->prefix('api/auth')
                 ->name('auth.')
                 ->group(base_path('routes/auth.php'));
+
+            Route::middleware('api')
+                ->prefix('api/products')
+                ->name('products.')
+                ->group(base_path('routes/product.php'));
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'optional.auth' => OptionalAuthenticate::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

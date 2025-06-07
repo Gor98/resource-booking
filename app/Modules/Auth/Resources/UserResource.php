@@ -19,7 +19,7 @@ class UserResource extends JsonResource
         return [
             'name' => $this->name,
             'email' => $this->email,
-            'created_at' => format($this->created_at),
+            'email_verified_at' => format($this->email_verified_at ?? ''),
         ];
     }
 }

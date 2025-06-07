@@ -8,7 +8,7 @@ use App\Modules\Auth\Models\User;
  * Class UserObserver
  * @package App\Modules\Auth\Observers
  */
-class AuthUserObserver
+class UserObserver
 {
     /**
      * @param User $user
