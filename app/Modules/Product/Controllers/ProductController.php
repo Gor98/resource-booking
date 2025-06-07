@@ -36,6 +36,10 @@ class ProductController extends Controller
         ));
     }
 
+    /**
+     * @param FavoriteRequest $request
+     * @return JsonResponse
+     */
     public function AddFavorite(FavoriteRequest $request): JsonResponse
     {
         return APIResponse::successResponse(new ProductResource(
@@ -43,10 +47,25 @@ class ProductController extends Controller
         ));
     }
 
+    /**
+     * @param Product $product
+     * @return JsonResponse
+     */
     public function removeFavorite(Product $product): JsonResponse
     {
         $this->productServiceContract->removeFavorite($product);
 
         return APIResponse::successResponse([]);
+    }
+
+    /**
+     * @param ProductRequest $request
+     * @return JsonResponse
+     */
+    public function favorites(ProductRequest $request): JsonResponse
+    {
+        return APIResponse::collectionResponse(ProductResource::collection(
+            $this->productServiceContract->favorites($request)
+        ));
     }
 }

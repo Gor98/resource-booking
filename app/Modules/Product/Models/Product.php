@@ -3,6 +3,7 @@
 namespace App\Modules\Product\Models;
 
 use App\Modules\Auth\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -36,6 +37,13 @@ class Product extends Model
     public function favorite()
     {
         return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
+    }
+
+    public function scopeFavoritedBy(Builder $query, int $userId): Builder
+    {
+        return $query->whereHas('favorite', function ($q) use ($userId) {
+            $q->where('user_id', $userId);
+        });
     }
 }
 

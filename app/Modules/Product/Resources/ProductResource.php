@@ -21,7 +21,7 @@ class ProductResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
             'description' => $this->description,
-            'is_favorited' => auth()->check()
+            'is_favorite' => auth()->check()
                 ? $this->favorite->contains(auth()->id())
                 : false,
             'category' => new CategoryResource($this->category),

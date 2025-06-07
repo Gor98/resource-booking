@@ -31,7 +31,6 @@ class ProductService extends Service implements ProductServiceContract
      */
     public function all(ProductRequest $request): LengthAwarePaginator
     {
-        // TODO add functionalty for auth users
        return $this->productRepository->sortPaginate(
            [],
            ['category', 'favorite'],
@@ -76,5 +75,17 @@ class ProductService extends Service implements ProductServiceContract
         if ($this->productRepository->isFavorite($user, $product->id)) {
             $this->productRepository->removeFavorite($user, $product->id);
         }
+    }
+
+    /**
+     * @throws RepositoryException
+     */
+    public function favorites(ProductRequest $request): LengthAwarePaginator
+    {
+        return $this->productRepository->sortPaginate(
+            ['favoritedBy' => auth()->id()],
+            ['category'],
+            $request->only(['orderType', 'orderBy', 'perPage'])
+        );
     }
 }

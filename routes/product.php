@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'all'])
     ->middleware('optional.auth')
     ->name('all');
+Route::get('favorites', [ProductController::class, 'favorites'])
+    ->middleware('auth:sanctum')
+    ->name('favorites');
 Route::post('add-favorite', [ProductController::class, 'addFavorite'])
     ->middleware('auth:sanctum')
     ->name('add-favorite');
