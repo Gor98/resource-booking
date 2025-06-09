@@ -3,6 +3,7 @@
 
 namespace App\Modules\Product\Resources;
 
+use App\Modules\File\Resources\FileResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
@@ -25,6 +26,7 @@ class ProductResource extends JsonResource
                 ? $this->favorite->contains(auth()->id())
                 : false,
             'category' => new CategoryResource($this->category),
+            'images' => FileResource::collection($this->files),
         ];
     }
 }

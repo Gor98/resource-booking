@@ -33,7 +33,7 @@ class ProductService extends Service implements ProductServiceContract
     {
        return $this->productRepository->sortPaginate(
            [],
-           ['category', 'favorite'],
+           ['category', 'favorite', 'files'],
            $request->only(['orderType', 'orderBy', 'perPage'])
        );
     }
@@ -84,7 +84,7 @@ class ProductService extends Service implements ProductServiceContract
     {
         return $this->productRepository->sortPaginate(
             ['favoritedBy' => auth()->id()],
-            ['category'],
+            ['category', 'files'],
             $request->only(['orderType', 'orderBy', 'perPage'])
         );
     }
