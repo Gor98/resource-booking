@@ -4,7 +4,7 @@ namespace Feature\Auth;
 
 use Symfony\Component\HttpFoundation\Response;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 
 /**
@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
  */
 class RegisterTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * @return void

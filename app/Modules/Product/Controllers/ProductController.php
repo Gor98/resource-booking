@@ -4,6 +4,7 @@
 namespace App\Modules\Product\Controllers;
 
 use App\Common\Bases\Controller;
+use App\Common\Exceptions\RepositoryException;
 use App\Common\Tools\APIResponse;
 use App\Modules\Product\Contracts\ProductServiceContract;
 use App\Modules\Product\Models\Product;
@@ -61,6 +62,7 @@ class ProductController extends Controller
     /**
      * @param ProductRequest $request
      * @return JsonResponse
+     * @throws RepositoryException
      */
     public function favorites(ProductRequest $request): JsonResponse
     {

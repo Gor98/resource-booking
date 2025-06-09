@@ -5,7 +5,7 @@ namespace Feature\Auth;
 use App\Modules\Auth\Models\User;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 /**
  * Class LogoutTest
@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
  */
 class LogoutTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * @return void
