@@ -51,7 +51,7 @@ php artisan test
 ## API Testing
 A Postman collection is included in the repository for testing the API endpoints. Import the collection into Postman to test the available routes easily.
 
-#### **market.postman_collection.json**
+#### **Market-api-collection.postman_collection.json**
 
 ## Additional Notes
 - Ensure Docker and Docker Compose are installed on your system.
