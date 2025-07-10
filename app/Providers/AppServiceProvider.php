@@ -21,16 +21,6 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(AuthUserServiceContract::class, AuthUserService::class);
-        $this->app->bind(ProductServiceContract::class, ProductService::class);
-
-        $this->app->bind(FileServiceContract::class, function () {
-            $disk = config('filesystems.default');
-
-            return match ($disk) {
-                's3' => app()->make(S3FileService::class),
-                'local' => app()->make(LocalFileService::class),
-            };
-        });
     }
 
     /**

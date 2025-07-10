@@ -17,22 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->prefix('api/auth')
                 ->name('auth.')
                 ->group(base_path('routes/auth.php'));
-
-            Route::middleware('api')
-                ->prefix('api/products')
-                ->name('products.')
-                ->group(base_path('routes/product.php'));
-
-            Route::middleware('api')
-                ->prefix('api/files')
-                ->name('files.')
-                ->group(base_path('routes/file.php'));
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->alias([
-            'optional.auth' => OptionalAuthenticate::class
-        ]);
+        $middleware->alias([]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

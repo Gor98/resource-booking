@@ -1,5 +1,5 @@
 
-# Market Task
+# Resource Task
 
 ## Project Setup
 
@@ -7,8 +7,8 @@ Follow these steps to set up and run the project:
 
 ### 1. Clone the Repository
 ```sh
-git clone git@github.com:Gor98/market-api-demo.git
-cd market-api-demo/
+git clone git@github.com:Gor98/resource-booking.git
+cd resource-booking/
 ```
 
 ### 2. Configure Environment Variables
@@ -49,9 +49,10 @@ php artisan test
 ```
 
 ## API Testing
-A Postman collection is included in the repository for testing the API endpoints. Import the collection into Postman to test the available routes easily.
+A Postman collection is included in the repository for testing the API endpoints.
+Import the collection into Postman to test the available routes easily.
 
-#### **Market-api-collection.postman_collection.json**
+#### **Resource-booking-collection.postman_collection.json**
 
 ## Additional Notes
 - Ensure Docker and Docker Compose are installed on your system.
