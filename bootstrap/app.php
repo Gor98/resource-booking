@@ -22,6 +22,11 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->prefix('api/resources')
                 ->name('resources.')
                 ->group(base_path('routes/resource.php'));
+
+            Route::middleware('api')
+                ->prefix('api/bookings')
+                ->name('bookings.')
+                ->group(base_path('routes/booking.php'));
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
