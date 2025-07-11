@@ -19,7 +19,7 @@ class StoreResourceRequest extends BaseRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
             'type' => 'required|string|in:' . $this->implode(Resource::TYPES),
         ];
     }
