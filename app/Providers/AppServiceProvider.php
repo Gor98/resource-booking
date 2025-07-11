@@ -6,11 +6,8 @@ use App\Modules\Auth\Contracts\AuthUserServiceContract;
 use App\Modules\Auth\Models\User;
 use App\Modules\Auth\Observers\UserObserver;
 use App\Modules\Auth\Services\AuthUserService;
-use App\Modules\File\Contracts\FileServiceContract;
-use App\Modules\File\Services\LocalFileService;
-use App\Modules\File\Services\S3FileService;
-use App\Modules\Product\Contracts\ProductServiceContract;
-use App\Modules\Product\Services\ProductService;
+use App\Modules\Resource\Contracts\ResourceServiceContract;
+use App\Modules\Resource\Services\ResourceService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(AuthUserServiceContract::class, AuthUserService::class);
+        $this->app->bind(ResourceServiceContract::class, ResourceService::class);
     }
 
     /**

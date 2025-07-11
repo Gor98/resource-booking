@@ -23,7 +23,7 @@ abstract class BaseRequest extends FormRequest
      * @param array $list
      * @return string
      */
-    public function implode(string $glue = ',', array $list = [])
+    public function implode(array $list = [], string $glue = ',')
     {
         return implode($glue, $list);
     }
