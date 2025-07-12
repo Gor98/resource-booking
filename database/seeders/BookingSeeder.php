@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Modules\Auth\Models\User;
+use App\Modules\Booking\Models\Booking;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class BookingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $users = User::factory(3)->create();
+        Booking::factory(10)->create();
     }
 }
