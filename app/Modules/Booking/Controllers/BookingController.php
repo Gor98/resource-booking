@@ -8,9 +8,9 @@ use App\Common\Tools\APIResponse;
 use App\Modules\Booking\Contracts\BookingServiceContract;
 use App\Modules\Booking\Models\Booking;
 use App\Modules\Booking\Requests\StoreBookingRequest;
-use App\Modules\Booking\Requests\RemoveBookingRequest;
 use App\Modules\Booking\Resources\BookingResource;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -43,6 +43,6 @@ class BookingController extends Controller
     {
         $this->bookingService->unBook($booking);
 
-        return APIResponse::successResponse([]);
+        return APIResponse::successResponse([], '', Response::HTTP_NO_CONTENT);
     }
 }
