@@ -20,6 +20,12 @@ interface ResourceServiceContract
     public function store(StoreResourceRequest $request): Resource;
 
     /**
+     * @param Resource $resoruce
+     * @return Resource
+     */
+    public function show(Resource $resoruce): Resource;
+
+    /**
      * @param ResourceRequest $request
      * @return LengthAwarePaginator
      */

@@ -26,7 +26,6 @@ class GetResourceTest extends TestCase
         $response->assertJsonStructure([
             'data',
             'message',
-            'data',
             'pagination',
         ]);
         $response->assertStatus(Response::HTTP_OK);

@@ -21,6 +21,7 @@ class ResourceResource extends JsonResource
             'type' => $this->type,
             'description' => $this->description,
             'create_at' => format($this->created_at),
+            'bookings' => $this->whenLoaded('bookings'),
         ];
     }
 }

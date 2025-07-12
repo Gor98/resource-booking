@@ -17,14 +17,12 @@ use Illuminate\Pagination\LengthAwarePaginator;
  */
 class ResourceService extends Service implements ResourceServiceContract
 {
-
     /**
      * @param ResourceRepository $resourceRepository
      */
     public function __construct(protected ResourceRepository $resourceRepository)
     {
     }
-
 
     /**
      * @param StoreResourceRequest $request
@@ -48,5 +46,14 @@ class ResourceService extends Service implements ResourceServiceContract
             [],
             $request->only(['orderType', 'orderBy', 'perPage'])
         );
+    }
+
+    /**
+     * @param Resource $resource
+     * @return Resource
+     */
+    public function show(Resource $resource): Resource
+    {
+        return $resource->load('bookings');
     }
 }
